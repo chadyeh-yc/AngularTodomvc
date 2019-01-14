@@ -48,4 +48,8 @@ export class AppComponent {
   get uncompletedCount() {
     return this.todos.filter(item => item.isCompleted === false).length;
   }
+
+  clearCompletes() {
+    this.todos = this.todos.filter(item => item.isCompleted === false);
+  }
 }
