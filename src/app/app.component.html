@@ -6,14 +6,14 @@
   </header>
   <!-- This section should be hidden by default and shown when there are todos -->
   <section class="main">
-    <input class="toggle-all" type="checkbox">
+    <input class="toggle-all" type="checkbox" (change)="toggleAllComplete()">
     <label for="toggle-all">Mark all as complete</label>
     <ul class="todo-list">
       <!-- These are here just to show the structure of the list items -->
       <!-- List items should get the class `editing` when editing and `completed` when marked as completed -->
       <li *ngFor="let todo of todos; let idx = index" [ngClass]="{ completed: todo.isCompleted }">
         <div class="view">
-          <input class="toggle" type="checkbox" (change)="toggleComplete(todo)">
+          <input class="toggle" type="checkbox" [checked]="todo.isCompleted" (change)="toggleComplete(todo)">
           <label>{{ todo.item }}</label>
           <button class="destroy" (click)="removeToDo(idx)"></button>
         </div>
