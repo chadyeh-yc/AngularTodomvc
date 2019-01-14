@@ -44,4 +44,8 @@ export class AppComponent {
     this.todos.forEach(item => item.isCompleted = true);
     // this.todos = this.todos.map(todo => ({ ...todo, isCompleted: true }));
   }
+
+  get uncompletedCount() {
+    return this.todos.filter(item => item.isCompleted === false).length;
+  }
 }
