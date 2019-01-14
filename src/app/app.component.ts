@@ -10,8 +10,11 @@ export class AppComponent {
   newToDoPlaceholder = 'What needs to be done?';
 
   newToDo = '';
+
+  todos = [];
   addToDo() {
     console.log(this.newToDo);
+    this.todos.push(this.newToDo);
     this.newToDo = '';
   }
 }
