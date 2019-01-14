@@ -9,8 +9,9 @@ export class AppComponent {
   title = 'todomvc';
   newToDoPlaceholder = 'What needs to be done?';
 
-  addToDo(newToDo: { value: string; }) {
-    console.log(newToDo.value);
-    newToDo.value = '';
+  newToDo = '';
+  addToDo() {
+    console.log(this.newToDo);
+    this.newToDo = '';
   }
 }
