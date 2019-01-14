@@ -5,7 +5,7 @@
     <input class="new-todo" [placeholder]=newToDoPlaceholder autofocus [(ngModel)]="newToDo" (keyup.enter)="addToDo()" />
   </header>
   <!-- This section should be hidden by default and shown when there are todos -->
-  <section class="main">
+  <section class="main" *ngIf="todos.length > 0">
     <input class="toggle-all" type="checkbox" (change)="toggleAllComplete()">
     <label for="toggle-all">Mark all as complete</label>
     <ul class="todo-list">
@@ -30,7 +30,7 @@
     </ul>
   </section>
   <!-- This footer should hidden by default and shown when there are todos -->
-  <footer class="footer">
+  <footer class="footer" [hidden]="todos.length === 0">
     <!-- This should be `0 items left` by default -->
     <span class="todo-count"><strong>0</strong> item left</span>
     <!-- Remove this if you don't implement routing -->
