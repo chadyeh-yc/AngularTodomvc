@@ -4,6 +4,7 @@ interface Todo {
   id: number;
   item: string;
   isCompleted: boolean;
+  isEditing: boolean;
 }
 
 @Component({
@@ -25,7 +26,8 @@ export class AppComponent {
     this.todos.push({
       id: ++this.maxId,
       item: this.newToDo,
-      isCompleted: false
+      isCompleted: false,
+      isEditing: false
     });
     this.newToDo = '';
   }
