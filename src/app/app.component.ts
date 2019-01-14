@@ -12,9 +12,15 @@ export class AppComponent {
   newToDo = '';
 
   todos = [];
+
+  maxId = 0;
   addToDo() {
     console.log(this.newToDo);
-    this.todos.push(this.newToDo);
+    this.todos.push({
+      id: ++this.maxId,
+      item: this.newToDo,
+      isCompleted: false
+    });
     this.newToDo = '';
   }
 }
