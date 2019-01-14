@@ -1,5 +1,11 @@
 import { Component } from '@angular/core';
 
+interface Todo {
+  id: number;
+  item: string;
+  isCompleted: boolean;
+}
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -11,7 +17,7 @@ export class AppComponent {
 
   newToDo = '';
 
-  todos = [];
+  todos: Todo[] = [];
 
   maxId = 0;
   addToDo() {
@@ -22,5 +28,8 @@ export class AppComponent {
       isCompleted: false
     });
     this.newToDo = '';
+  }
+  toggleComplete(todo: Todo) {
+    todo.isCompleted = !todo.isCompleted;
   }
 }
