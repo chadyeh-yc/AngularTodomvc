@@ -60,6 +60,7 @@ export class AppComponent {
 
   toggleComplete(todo: Todo) {
     todo.isCompleted = !todo.isCompleted;
+    this.todos = [...this.todos];
   }
 
   toggleAllComplete() {
