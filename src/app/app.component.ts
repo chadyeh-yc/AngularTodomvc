@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 
-interface Todo {
+export interface Todo {
   id: number;
   item: string;
   isCompleted: boolean;
@@ -40,6 +40,9 @@ export class AppComponent {
   ];
 
   maxId = 0;
+
+  filterCondition = 'all';
+
   addToDo() {
     console.log(this.newToDo);
     this.todos.push({
