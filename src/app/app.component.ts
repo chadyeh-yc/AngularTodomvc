@@ -18,7 +18,26 @@ export class AppComponent {
 
   newToDo = '';
 
-  todos: Todo[] = [];
+  todos: Todo[] = [
+    {
+      id: 1,
+      item: 'todo 1',
+      isCompleted: false,
+      isEditing: false
+    },
+    {
+      id: 2,
+      item: 'todo 2',
+      isCompleted: true,
+      isEditing: false
+    },
+    {
+      id: 3,
+      item: 'todo 3',
+      isCompleted: false,
+      isEditing: false
+    }
+  ];
 
   maxId = 0;
   addToDo() {
