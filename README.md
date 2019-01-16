@@ -1,6 +1,10 @@
 # Todomvc
 Angular Todomvc
 
+https://paper.dropbox.com/doc/--AVyFb8ajMlAUZzgzoTI12tLiAg-QuRdUwKqI0J8T5ht3odth
+
+https://paper.dropbox.com/doc/Angular--AVwlvfeJQRKkyGGQPogdqO1rAg-a52sngtJYK8GEhdAg7LJi
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.1.4.
 
 ## Development server
