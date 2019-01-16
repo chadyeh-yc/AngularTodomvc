@@ -28,13 +28,13 @@
     <!-- Remove this if you don't implement routing -->
     <ul class="filters">
       <li>
-        <a class="selected" href="#/" (click)="filterCondition='all'">All</a>
+        <a [class.selected]="filterCondition === 'all'" href="#/" (click)="filterCondition='all'">All</a>
       </li>
       <li>
-        <a href="#/active" (click)="filterCondition='active'">Active</a>
+        <a [class.selected]="filterCondition === 'active'" href="#/active" (click)="filterCondition='active'">Active</a>
       </li>
       <li>
-        <a href="#/completed" (click)="filterCondition='completed'">Completed</a>
+        <a [class.selected]="filterCondition === 'completed'" href="#/completed" (click)="filterCondition='completed'">Completed</a>
       </li>
     </ul>
     <!-- Hidden if no completed items are left ↓ -->
