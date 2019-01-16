@@ -1,8 +1,5 @@
 <section class="todoapp">
-  <header class="header">
-    <h1>{{title}}</h1>
-    <input class="new-todo" [placeholder]=newToDoPlaceholder autofocus [(ngModel)]="newToDo" (keyup.enter)="addToDo()" />
-  </header>
+  <app-header [title]="title" [newTodoPlaceholder]="newTodoPlaceholder"></app-header>
   <!-- This section should be hidden by default and shown when there are todos -->
   <section class="main" *ngIf="todos.length > 0">
     <input class="toggle-all" type="checkbox" (change)="toggleAllComplete()">
