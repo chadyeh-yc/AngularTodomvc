@@ -59,8 +59,13 @@ export class AppComponent {
   }
 
   toggleComplete(todo: Todo) {
-    todo.isCompleted = !todo.isCompleted;
-    this.todos = [...this.todos];
+    this.todos = this.todos.map(_todo => {
+      if (_todo.id === todo.id) {
+        _todo.isCompleted = !_todo.isCompleted;
+      }
+      return _todo;
+    });
+    // todo.isCompleted = !todo.isCompleted;
   }
 
   toggleAllComplete() {
