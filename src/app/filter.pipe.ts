@@ -2,7 +2,8 @@ import { Pipe, PipeTransform } from '@angular/core';
 import { Todo } from './app.component';
 
 @Pipe({
-  name: 'filter'
+  name: 'filter',
+  pure: false
 })
 export class FilterPipe implements PipeTransform {
   transform(todos: Todo[], condition?: 'all' | 'active' | 'completed'): Todo[] {
