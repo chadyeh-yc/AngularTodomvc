@@ -5,18 +5,18 @@ import { Todo } from './app.component';
   name: 'filter'
 })
 export class FilterPipe implements PipeTransform {
-  transform(todos: Todo[], condition?: string): any {
+  transform(todos: Todo[], condition?: 'all' | 'active' | 'completed'): Todo[] {
 
     // show all
     if (condition === 'all') {
       return todos;
     }
     // TODO: show active (not complete) isCompleted
-    if (condition === 'notComplete') {
+    if (condition === 'active') {
       return todos.filter(item => item.isCompleted === false);
     }
     // TODO: show completed isCompleted
-    if (condition === 'complete') {
+    if (condition === 'completed') {
       return todos.filter(item => item.isCompleted === true);
     }
     return todos;
