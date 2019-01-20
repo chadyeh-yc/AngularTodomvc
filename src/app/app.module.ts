@@ -5,13 +5,15 @@ import { AppComponent } from './app.component';
 import { FilterPipe } from './filter.pipe';
 import { FooterComponent } from './footer/footer.component';
 import { HeaderComponent } from './header/header.component';
+import { TodoFiltersComponent } from './todo-filters/todo-filters.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     FilterPipe,
     FooterComponent,
-    HeaderComponent
+    HeaderComponent,
+    TodoFiltersComponent
   ],
   imports: [
     BrowserModule,
