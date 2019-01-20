@@ -16,8 +16,6 @@ export class AppComponent {
   title = 'todomvc';
   newToDoPlaceholder = 'What needs to be done?';
 
-  newToDo = '';
-
   todos: Todo[] = [
     {
       id: 1,
@@ -43,15 +41,14 @@ export class AppComponent {
 
   filterCondition = 'all';
 
-  addToDo() {
-    console.log(this.newToDo);
+  addToDo(newToDo: string) {
+    console.log(newToDo);
     this.todos.push({
       id: ++this.maxId,
-      item: this.newToDo,
+      item: newToDo,
       isCompleted: false,
       isEditing: false
     });
-    this.newToDo = '';
   }
 
   removeToDo(idx: number) {

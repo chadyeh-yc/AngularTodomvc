@@ -1,5 +1,5 @@
 <section class="todoapp">
-  <app-header [title]="title" [newTodoPlaceholder]="newTodoPlaceholder"></app-header>
+  <app-header [title]="title" [newToDoPlaceholder]="newToDoPlaceholder" (addToDo)="addToDo($event)"></app-header>
   <!-- This section should be hidden by default and shown when there are todos -->
   <section class="main" *ngIf="todos.length > 0">
     <input class="toggle-all" type="checkbox" (change)="toggleAllComplete()">
