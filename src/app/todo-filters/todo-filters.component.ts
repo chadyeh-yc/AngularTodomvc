@@ -1,4 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import {
+  Component,
+  OnInit,
+  Input,
+  Output,
+  EventEmitter
+} from '@angular/core';
 
 @Component({
   selector: 'app-todo-filters',
@@ -7,9 +13,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TodoFiltersComponent implements OnInit {
 
-  constructor() { }
+  @Input() filterCondition: string;
 
-  ngOnInit() {
+  @Output() filterConditionChange = new EventEmitter<string>();
+  constructor() {}
+
+  ngOnInit() {}
+
+  changeFilter(condition: string) {
+    this.filterConditionChange.emit(condition);
+    this.filterCondition = condition;
   }
-
 }

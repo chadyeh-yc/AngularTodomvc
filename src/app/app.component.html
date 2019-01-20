@@ -22,17 +22,7 @@
     <!-- This should be `0 items left` by default -->
     <span class="todo-count"><strong>{{ uncompletedCount }}</strong> item left</span>
     <!-- Remove this if you don't implement routing -->
-    <ul class="filters">
-      <li>
-        <a [class.selected]="filterCondition === 'all'" href="#/" (click)="filterCondition='all'">All</a>
-      </li>
-      <li>
-        <a [class.selected]="filterCondition === 'active'" href="#/active" (click)="filterCondition='active'">Active</a>
-      </li>
-      <li>
-        <a [class.selected]="filterCondition === 'completed'" href="#/completed" (click)="filterCondition='completed'">Completed</a>
-      </li>
-    </ul>
+    <app-todo-filters [(filterCondition)]="filterCondition"></app-todo-filters>
     <!-- Hidden if no completed items are left ↓ -->
     <button class="clear-completed" (click)="clearCompletes()">Clear completed</button>
   </footer>
