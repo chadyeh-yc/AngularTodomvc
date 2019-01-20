@@ -6,6 +6,7 @@ import { FilterPipe } from './filter.pipe';
 import { FooterComponent } from './footer/footer.component';
 import { HeaderComponent } from './header/header.component';
 import { TodoFiltersComponent } from './todo-filters/todo-filters.component';
+import { TodoListComponent } from './todo-list/todo-list.component';
 
 @NgModule({
   declarations: [
@@ -13,7 +14,8 @@ import { TodoFiltersComponent } from './todo-filters/todo-filters.component';
     FilterPipe,
     FooterComponent,
     HeaderComponent,
-    TodoFiltersComponent
+    TodoFiltersComponent,
+    TodoListComponent
   ],
   imports: [
     BrowserModule,
