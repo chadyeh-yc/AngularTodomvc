@@ -1,3 +1,9 @@
-<p>
-  todo-list works!
-</p>
+<section class="main" *ngIf="todos.length > 0">
+  <input class="toggle-all" type="checkbox" (change)="toggleAllComplete()">
+  <label for="toggle-all">Mark all as complete</label>
+  <ul class="todo-list">
+    <!-- These are here just to show the structure of the list items -->
+    <!-- List items should get the class `editing` when editing and `completed` when marked as completed -->
+    <app-todo-item [(todos)]="todos" [filterCondition]="filterCondition"></app-todo-item>
+  </ul>
+</section>

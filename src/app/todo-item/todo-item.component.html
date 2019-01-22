@@ -1,3 +1,8 @@
-<p>
-  todo-item works!
-</p>
+<li *ngFor="let todo of (todos | filter: filterCondition); let idx = index" [ngClass]="{ 'completed': todo.isCompleted, 'editing': todo.isEditing }">
+  <div class="view">
+    <input class="toggle" type="checkbox" [checked]="todo.isCompleted" (change)="toggleComplete(todo)">
+    <label (dblclick)="todo.isEditing = true">{{ todo.item }}</label>
+    <button class="destroy" (click)="removeToDo(idx)"></button>
+  </div>
+  <input class="edit" [(ngModel)]="todo.item" (blur)="todo.isEditing = false">
+</li>

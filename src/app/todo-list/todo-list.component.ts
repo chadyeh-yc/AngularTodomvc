@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Todo } from '../app.component';
 
 @Component({
   selector: 'app-todo-list',
@@ -7,9 +8,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TodoListComponent implements OnInit {
 
+  @Input() todos: Todo[];
+
+  @Input() filterCondition: string;
+
+  @Output() todosChange = new EventEmitter<Todo[]>();
+
   constructor() { }
 
   ngOnInit() {
+  }
+
+  toggleAllComplete() {
+    this.todos.forEach(item => item.isCompleted = true);
+    this.todosChange.emit(this.todos);
+    // this.todos = this.todos.map(todo => ({ ...todo, isCompleted: true }));
   }
 
 }
