@@ -7,6 +7,7 @@ import { FooterComponent } from './footer/footer.component';
 import { HeaderComponent } from './header/header.component';
 import { TodoFiltersComponent } from './todo-filters/todo-filters.component';
 import { TodoListComponent } from './todo-list/todo-list.component';
+import { TodoItemComponent } from './todo-item/todo-item.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { TodoListComponent } from './todo-list/todo-list.component';
     FooterComponent,
     HeaderComponent,
     TodoFiltersComponent,
-    TodoListComponent
+    TodoListComponent,
+    TodoItemComponent
   ],
   imports: [
     BrowserModule,
