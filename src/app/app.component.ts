@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { TodoListComponent } from './todo-list/todo-list.component';
 
 export interface Todo {
   id: number;
@@ -37,7 +38,7 @@ export class AppComponent {
     }
   ];
 
-  maxId = 0;
+  maxId: number = this.todos.length;
 
   filterCondition = 'all';
 
