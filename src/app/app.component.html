@@ -1,7 +1,15 @@
 <section class="todoapp">
   <app-header [title]="title" [newToDoPlaceholder]="newToDoPlaceholder" (addToDo)="addToDo($event)"></app-header>
   <!-- This section should be hidden by default and shown when there are todos -->
-  <app-todo-list [(todos)]="todos" [filterCondition]="filterCondition"></app-todo-list>
+  <section class="main" *ngIf="todos.length > 0">
+    <input class="toggle-all" type="checkbox" (change)="toggleAllComplete()">
+    <label for="toggle-all">Mark all as complete</label>
+    <ul class="todo-list">
+      <!-- These are here just to show the structure of the list items -->
+      <!-- List items should get the class `editing` when editing and `completed` when marked as completed -->
+      <app-todo-item [(todos)]="todos" [filterCondition]="filterCondition"></app-todo-item>
+    </ul>
+  </section>
   <!-- This footer should hidden by default and shown when there are todos -->
   <footer class="footer" [hidden]="todos.length === 0">
     <!-- This should be `0 items left` by default -->
