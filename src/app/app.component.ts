@@ -44,12 +44,18 @@ export class AppComponent {
 
   addToDo(newToDo: string) {
     console.log(newToDo);
-    this.todos.push({
+    // this.todos.push({
+    //   id: ++this.maxId,
+    //   item: newToDo,
+    //   isCompleted: false,
+    //   isEditing: false
+    // });
+    this.todos = [...this.todos, {
       id: ++this.maxId,
       item: newToDo,
       isCompleted: false,
       isEditing: false
-    });
+    }];
   }
 
   removeToDo(idx: number) {
